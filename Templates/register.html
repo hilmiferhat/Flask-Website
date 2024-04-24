@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kayıt Ol</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login_style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Kayıt Ol</h1>
+        </header>
+        {% with messages = get_flashed_messages() %}
+            {% if messages %}
+                <div class="alert">
+                    {{ messages[-1] }}
+                </div>
+            {% endif %}
+        {% endwith %}
+        <div id="content">
+            <form action="/register" method="post">
+                <label for="username">Kullanıcı Adı:</label>
+                <br><input type="text" id="username" name="username" required><br>
+                <label for="password">Şifre:</label>
+                <br><input type="password" id="password" name="password" required><br>
+                <label for="email">E-Mail:</label> <!-- Changed type from "mail" to "email" -->
+                <br><input type="email" id="email" name="email" required><br><br> <!-- Changed id from "mail" to "email" -->
+                <input class="submit_button" type="submit" value="Kayıt Ol">
+            </form>
+            <form id="loginForm" action="/login">
+                <input class="submit_button" type="submit" value="Zaten Kayıtlı Mısın?">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

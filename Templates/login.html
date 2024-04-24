@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giriş Yap</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='login_style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Giriş Yap</h1>
+        </header>
+        <div id="content">
+            <form id="loginForm" action="/login" method="post">
+                <label for="username">Kullanıcı Adı:</label><br>
+                <input type="text" id="username" name="username" required><br>
+                <label for="password">Şifre:</label><br>
+                <input type="password" id="password" name="password" required><br><br>
+                <input class="submit_button" type="submit" value="Giriş Yap">
+            </form>
+            <form id="registerForm" href="/register" method="get">
+                <input class="submit_button" type="submit" value="Kayıt Ol">
+            </form>
+        </div>
+    </div>
+</body>
+<script>
+    // Kayıt ol butonuna tıklandığında kayıt ol formunu gönder
+    document.getElementById("registerForm").addEventListener("submit", function(event){
+        event.preventDefault(); // Formun otomatik olarak gönderilmesini engelle
+        window.location.href = "/register"; // Kayıt ol sayfasına yönlendir
+    });
+</script>
+</html>

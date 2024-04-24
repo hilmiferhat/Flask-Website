@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='home_style.css') }}">
+    <title>Anasayfa</title>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Flask Blog Site</h1>
+            <form id="new-post-button" action="/new_post" method="GET">
+                <input class="new-post-button" type="submit" value="New Post">   
+            </form>
+            <form id="logout-button" action="/logout" method="GET">
+                <input class="logout-button" type="submit" value="Log Out">
+            </form>
+        </header>
+        {% if session.get('username') %}
+            <p>Welcome, {{ session['username'] }}!</p>
+        {% else %}
+            <a href="{{ url_for('login') }}">Login</a>
+        {% endif %}
+        <div id="content">
+            <h2>Blog Gönderileri</h2>
+            {% for element in posts %}
+            <div class="blog-post">
+                <div>
+                    <a href="{{ url_for('post', post_id=element['id']) }}" class="blog-title-link">{{ element['title'] }}</a>
+                    <p><strong>Yazar:</strong> {{ element['author'] }}</p>
+                    <p><strong>Tarih:</strong> {{ element['date_posted'] }}</p>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</body>
+</html>

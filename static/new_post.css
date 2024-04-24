@@ -1,0 +1,91 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #333; /* Turuncu arka plan */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.container {
+    width: 400px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 15px; /* Oval köşeler */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+h1 {
+    font-family: 'Arial Black', sans-serif; /* Kalın font */
+    font-size: 24px; /* Yazı boyutu */
+    color: #5E72E4; /* Mavi renk */
+    text-align: center; /* Ortala */
+    margin-bottom: 20px; /* Azaltılan boşluk */
+}
+input[type="text"], textarea, select {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px; /* Azaltılan boşluk */
+    border-radius: 20px; /* Oval köşeler */
+    border: 2px solid #000; /* Kalın siyah kenarlık */
+    font-family: Arial, sans-serif; /* Yazı fontu */
+    font-size: 14px; /* Yazı boyutu */
+    color: #333; /* Yazı rengi */
+}
+select {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background: url('https://img.icons8.com/ios/452/books.png') no-repeat right center / 9%;
+    padding-right: 30px;
+}
+input[type="file"] {
+    width: calc(100% - 22px);
+    padding: 10px;
+    margin-bottom: 10px; /* Azaltılan boşluk */
+    border-radius: 20px; /* Oval köşeler */
+    border: 2px solid #000; /* Kalın siyah kenarlık */
+    background-color: #fff;
+    font-family: Arial, sans-serif; /* Yazı fontu */
+    font-size: 14px; /* Yazı boyutu */
+    color: #333; /* Yazı rengi */
+}
+input[type="submit"] {
+    background-color: #000000;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 20px; /* Oval köşeler */
+    cursor: pointer;
+    transition: background-color 0.3s; /* Geçiş efekti */
+    width: 100%; /* Butonun genişliğini tamamen kapla */
+    font-family: Arial, sans-serif; /* Yazı fontu */
+    font-size: 16px; /* Yazı boyutu */
+}
+input[type="submit"]:hover {
+    background-color: #5E72E4;
+}
+
+label {
+    font-weight: bold;
+    color: #5E72E4; /* Mavi renk */
+    margin-bottom: 5px; /* Azaltılan boşluk */
+    display: block; /* Başlıkların alt alta gelmesi için */
+    font-size: 16px; /* Yazı boyutu */
+}
+#preview-container {
+    max-width: calc(100% - 22px);
+    max-height: 200px; /* Maksimum yükseklik belirleme */
+    overflow: hidden;
+    border: 2px solid #000; /* Kalın siyah kenarlık */
+    border-radius: 20px; /* Oval köşeler */
+    margin-bottom: 10px; /* Azaltılan boşluk */
+}
+#preview {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: auto;
+    object-fit: contain; /* Resmin boyutunu korurken orantılı olarak küçültme */
+    background-color: #fff; /* Beyaz arka plan */
+}

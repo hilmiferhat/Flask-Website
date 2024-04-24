@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yeni Gönderi Oluştur</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='new_post.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Yeni Gönderi Oluştur</h1>
+        <form action="{{ url_for('new_post') }}" method="post" enctype="multipart/form-data">
+            <label for="title">Başlık:</label>
+            <input type="text" id="title" name="title" required>
+            <label for="topic">Konu:</label>
+            <select id="topic" name="topic" required>
+                <option value="1">Teknoloji</option>
+                <option value="2">Seyahat</option>
+                <option value="3">Moda</option>
+                <option value="4">Spor</option>
+                <option value="5">Yemek</option>
+            </select>
+            <label for="banner">Blog Banneri:</label>
+            <input type="file" id="banner" name="banner" accept="image/*" required onchange="previewImage(event)" required>
+            <div id="preview-container">
+                <img id="preview" src="#" alt="Banner Önizleme">
+            </div>
+            <label for="content">İçerik:</label>
+            <textarea id="content" name="content" rows="6" required></textarea>
+            <input type="submit" value="Gönderi Oluştur">
+        </form>
+    </div>
+
+    <script>
+        function previewImage(event) {
+            var reader = new FileReader();
+            reader.onload = function() {
+                var preview = document.getElementById('preview');
+                preview.src = reader.result;
+            }
+            reader.readAsDataURL(event.target.files[0]);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Detayı</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='post.css') }}">
+</head>
+<body>
+
+    <header>
+        <h1>Blog Detayı</h1>
+    </header>
+    <div class="container">
+        <div class="banner" style="background-image: url('{{ url_for('static', filename=post['banner']) }}');"></div>
+        <div class="blog-content">
+            <div class="blog-info">
+                <p>Kategori: <strong>{{ post['topic'] }}</strong></p>
+                <p>Yazar: <strong>{{ post['author'] }}</strong></p>
+                <p>Paylaşılma Tarihi: <strong>{{ post['date_posted'] }}</strong></p>
+            </div>
+            <h2>{{post['title']}}</h2>
+            <p>{{post['content']}}</p>
+        </div>
+    </div>
+    
+    <!-- Scroll to top düğmesi -->
+    <button class="scroll-to-top" onclick="topFunction()" title="Sayfanın Başına Git"></button>
+    
+    <form id="home" action="/">
+        <input class="home" type="submit" value="Anasayfa">
+    </form>
+
+    <a href="#" class="back-button" onclick="goBack()" title="Geri Dön"></a>
+
+    <script>
+        // Sayfanın en üstüne gitme fonksiyonu
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+
+        // Sayfa aşağı kaydıkça düğmeleri göster/gizle
+        window.onscroll = function() {scrollFunction()};
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.querySelectorAll(".scroll-to-top, .scroll-to-home").forEach(function(button) {
+                    button.style.display = "block";
+                });
+            } else {
+                document.querySelectorAll(".scroll-to-top, .scroll-to-home").forEach(function(button) {
+                    button.style.display = "none";
+                });
+            }
+        }
+
+        // Ana sayfaya dönme fonksiyonu
+        function goHome() {
+            window.location.href = "ana_sayfa.html"; // Ana sayfanın adresine göre değiştirin
+        }
+
+        
+        // Geri dönme fonksiyonu
+        function goBack() {
+            window.history.back();
+        }
+    </script>
+    
+</body>
+</html>

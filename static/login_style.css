@@ -1,0 +1,88 @@
+/* Genel stiller */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 80%;
+    margin: auto;
+    overflow: hidden;
+}
+
+/* Başlık stilleri */
+header {
+    background: #333;
+    color: #fff;
+    padding-top: 20px;
+    min-height: 70px;
+    border-bottom: #5E72E4 3px solid;
+}
+
+header h1 {
+    float: left;
+    margin-left: 20px;
+}
+
+/* Menü stilleri */
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 15px;
+    display: inline-block;
+}
+
+nav a:hover {
+    background: #5E72E4;
+}
+
+/* İçerik stilleri */
+#content {
+    background: #fff;
+    padding: 20px;
+    min-height: 500px;
+}
+
+/* Form stilleri */
+form {
+    max-width: 300px;
+    margin: 20px auto;
+}
+
+form label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+form input[type="text"],
+form input[type="password"],
+form input[type="email"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.submit_button {
+    width: 100%;
+    background: #333;
+    color: #fff;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.submit_button:hover {
+    background: #5E72E4;
+}
